@@ -1,0 +1,14 @@
+#field {
+  width: 250px;
+  height: 200px;
+  border: 10px solid #000;
+  background: #00FF00;
+  position: relative;
+}
+
+#ball {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 1s ease-out;
+}
