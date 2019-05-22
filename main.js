@@ -12,17 +12,20 @@ field.addEventListener('click', (event) => {
     left: event.clientX - fieldInnerCoords.left - ball.clientWidth / 2
   };
 
-  if (ballCoords.top < 0) ballCoords.top = 0;
-  if (ballCoords.left < 0) ballCoords.left = 0;
+  let { top } = ballCoords;
+  let { left } = ballCoords;
 
-  if (ballCoords.left + ball.clientWidth > field.clientWidth) {
-    ballCoords.left = field.clientWidth - ball.clientWidth;
+  if (top < 0) top = 0;
+  if (left < 0) left = 0;
+
+  if (left + ball.clientWidth > field.clientWidth) {
+    left = field.clientWidth - ball.clientWidth;
   }
 
-  if (ballCoords.top + ball.clientHeight > field.clientHeight) {
-    ballCoords.top = field.clientHeight - ball.clientHeight;
+  if (top + ball.clientHeight > field.clientHeight) {
+    top = field.clientHeight - ball.clientHeight;
   }
 
-  ball.style.left = ballCoords.left + 'px';
-  ball.style.top = ballCoords.top + 'px';
+  ball.style.left = `${left}px`;
+  ball.style.top = `${top}px`;
 })
